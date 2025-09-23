@@ -2,7 +2,7 @@
 
 ## Project Metadata
 ### Authors
-- **Team:** Name1, Namw2
+- **Team:** Khalid Alyahya, Abdullah Alsagoor
 - **Supervisor Name:** Dr. Muzammil Behzad
 - **Affiliations:** SABIC, ARAMCO and KFUPM (write your institution name, and/or KFUPM)
 
