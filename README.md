@@ -4,20 +4,25 @@
 ### Authors
 - **Team:** Khalid Alyahya, Abdullah Alsagoor
 - **Supervisor Name:** Dr. Muzammil Behzad
-- **Affiliations:** SABIC, ARAMCO and KFUPM (write your institution name, and/or KFUPM)
+- **Affiliations:** KFUPM
 
 ## Introduction
-Write 1-2 technical paragraphs (feel free to add images if you would like).
+Air compressors are essential to several industries, including manufacturing and energy, and their operation needs to be reliable. It is critically important to have a way to detect mechanical failures in compressor systems to prevent operational downtime and unsafe working conditions.
+
+Traditional methods of fault detection, such as routine checks by operators, are being recognized as inadequate due to their subjective nature and inefficiency. Although data-driven approaches for detection based on vibration analysis offer potential improvements, many models are based on historical data for rather simplistic and limited mechanical fault types. Furthermore, their performance is restricted in practice because of the inherent difficulty of distinguishing which curated dynamic signal features are most correlated to compressor condition when the data is highly complex.
+
+This means there is a need to develop progressively 'smarter' diagnostic systems. Better informing models and decision making by utilizing different signal feature classifications, also known as feature fusion, will allow a better assessment of compressor state. This advancement is important for transitioning maintenance programs from reactive to predictive maintenance, providing improved reliability and reduced costs.
+
+Meta Data: Fault/Operating Mode (GOOD, IVF, OVF, IOVF), sampling range (10,000 samples or 0.0001s based readings), amplitude units m/s2, sensor configuration (Dytran 3055 B1), compressor rating (power supply, service pressure), data acquisition system configurations (NI-4432)
 
 ## Problem Statement
-Write 1-2 technical paragraphs (feel free to add images if you would like).
+At present, many existing fault diagnosis techniques for machines are generally inaccurate due to relying on limited types of characteristics and are generally not applicable for use across different machinery types, or in some instances to a narrow extent of offerings. This research project minimizes these limitations by providing a feature fusion prediction technique, where statistical features, histogram features, and ARMA features for air compressor fault prediction, shift some of the predictive accuracy base. However, the present shift in design and methodology still hinges on the questions of whether it will be generalizable across multi-stage compressors in practice, and whether predictive generalizability can be claimed or proven.
 
 ## Application Area and Project Domain
-Write 1-2 technical paragraphs (feel free to add images if you would like).
+This study falls under the interdisciplinary field of Intelligent Maintenance Systems, which combines machine learning, signal processing, and mechanical engineering.  With an emphasis on improving fault diagnosis for crucial rotating machinery, its specific application area is Industrial Predictive Maintenance.  To create a dependable framework for early fault detection that can reduce downtime and maximize maintenance operations in industrial settings, the study uses the specific use case of vibration-based condition monitoring for reciprocating air compressors to illustrate its methodology.
 
 ## What is the paper trying to do, and what are you planning to do?
-Write 1-2 technical paragraphs (feel free to add images if you would like).
-
+This paper aims to improve fault diagnosis in reciprocating air compressors by proposing an original feature fusion method that uses statistical, histogram, and ARMA features with vibration signals in heavy lazy classifiers to achieve even greater accuracy. Future developments of this research could include testing the model's generalizability with other similar machinery, utilizing advanced fusion techniques such as weighted or deep learning-based methods, incorporating data modalities beside vibration signals like the acoustic or thermal signals, and ultimately, building an end-to-end real-time predictive maintenance system for industry use.
 
 # THE FOLLOWING IS SUPPOSED TO BE DONE LATER
 
