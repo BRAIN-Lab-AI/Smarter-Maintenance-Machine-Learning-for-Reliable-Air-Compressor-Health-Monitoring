@@ -58,14 +58,14 @@ This paper aims to improve fault diagnosis in reciprocating air compressors by p
 - **CVF:** Check valve fault.
 
 ### Problem Statements
-- **Problem 1:** Achieving high-resolution and detailed images using conventional diffusion models remains challenging.
-- **Problem 2:** Existing models suffer from slow inference times during the image generation process.
-- **Problem 3:** There is limited capability in performing style transfer and generating diverse artistic variations.
+- **Problem 1:** There is a need to improve the accuracy of fault diagnosis in reciprocating air compressors beyond what current methods achieve.
+- **Problem 2:** The generalizability of the proposed model to other similar types of machinery has not yet been tested or validated.
+- **Problem 3:** Current approaches have not yet fully utilized advanced fusion techniques, such as deep learning-based methods, to enhance performance.
 
 ### Loopholes or Research Areas
-- **Evaluation Metrics:** Lack of robust metrics to effectively assess the quality of generated images.
-- **Output Consistency:** Inconsistencies in output quality when scaling the model to higher resolutions.
-- **Computational Resources:** Training requires significant GPU compute resources, which may not be readily accessible.
+- **Feature Dependence:** Reliance on handcrafted features limits portability and risks encoding dataset artifacts.
+- **Evaluation Methodology:** Usage of random splits ignores time dependence, causing data leakage and inflating accuracy.
+- **Generalization Assessment:** Absence of unseen blind-set testing fails to distinguish between true learning and dataset memorization.
 
 ### Problem vs. Ideation: Proposed 3 Ideas to Solve the Problems
 1. **Optimized Architecture:** Redesign the model architecture to improve efficiency and balance image quality with faster inference.
