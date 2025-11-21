@@ -30,6 +30,7 @@ This paper aims to improve fault diagnosis in reciprocating air compressors by p
 ### Project Documents
 - **Presentation:** [Project Presentation](/presentation.pptx)
 - **Report:** [Project Report](/report.pdf)
+- **Code:** [Project Code](/Code.ipynb)
 
 ### Reference Paper
 -  Prediction of air compressor faults with feature fusion and machinelearning
@@ -88,34 +89,6 @@ The workflow of the Automated Deep Sequence-Learning Model is designed to detect
 
 3. **Output:**
    - **Fault Classification:** The final processed representation is decoded to classify the equipment state into one of five categories: CVF (Control Valve Fault), GOOD (Healthy), IOVF (Inlet/Outlet Valve Fault), IVF (Inlet Valve Fault), or OVF (Outlet Valve Fault).
-
-## How to Run the Code
-
-1. **Clone the Repository:**
-    ```bash
-    git clone https://github.com/yourusername/enhanced-stable-diffusion.git
-    cd enhanced-stable-diffusion
-    ```
-
-2. **Set Up the Environment:**
-    Create a virtual environment and install the required dependencies.
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate  # On Windows use: venv\Scripts\activate
-    pip install -r requirements.txt
-    ```
-
-3. **Train the Model:**
-    Configure the training parameters in the provided configuration file and run:
-    ```bash
-    python train.py --config configs/train_config.yaml
-    ```
-
-4. **Generate Images:**
-    Once training is complete, use the inference script to generate images.
-    ```bash
-    python inference.py --checkpoint path/to/checkpoint.pt --input "A surreal landscape with mountains and rivers"
-    ```
 
 ## Acknowledgments
 - **Open-Source Communities:** Thanks to the contributors of PyTorch and other libraries for their amazing work.
