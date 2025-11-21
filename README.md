@@ -118,6 +118,4 @@ The workflow of the Automated Deep Sequence-Learning Model is designed to detect
     ```
 
 ## Acknowledgments
-- **Open-Source Communities:** Thanks to the contributors of PyTorch, Hugging Face, and other libraries for their amazing work.
-- **Individuals:** Special thanks to bla, bla, bla for the amazing team effort, invaluable guidance and support throughout this project.
-- **Resource Providers:** Gratitude to ABC-organization for providing the computational resources necessary for this project.
+- **Open-Source Communities:** Thanks to the contributors of PyTorch and other libraries for their amazing work.
