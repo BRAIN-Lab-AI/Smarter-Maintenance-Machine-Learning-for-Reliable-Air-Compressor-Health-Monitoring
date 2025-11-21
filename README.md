@@ -74,20 +74,20 @@ The solution includes:
 - **Pipeline Architecture:** Utilizes convolutional layers for automated local feature extraction combined with a BiGRU layer to capture hierarchical temporal relationships.
 
 ## Model Workflow
-The workflow of the Enhanced Stable Diffusion model is designed to translate textual descriptions into high-quality artistic images through a multi-step diffusion process:
+The workflow of the Automated Deep Sequence-Learning Model is designed to detect air compressor faults directly from raw vibration signals, eliminating the need for manual feature engineering:
 
 1. **Input:**
-   - **Text Prompt:** The model takes a text prompt (e.g., "A surreal landscape with mountains and rivers") as the primary input.
-   - **Tokenization:** The text prompt is tokenized and processed through a text encoder (such as a CLIP model) to obtain meaningful embeddings.
-   - **Latent Noise:** A random latent noise vector is generated to initialize the diffusion process, which is then conditioned on the text embeddings.
+   - **Raw Signal Acquisition:** The model accepts continuous blocks of raw vibration signals collected from a single-stage reciprocating air compressor.
+   - **Preprocessing and Windowing:** The raw signals are standardized (normalized to mean 0 and standard deviation 1) and segmented into fixed windows of 150 samples with a stride of 10.
+   - **Chronological Splitting:** To ensure realistic testing, the data is strictly divided by time into a development set (4,430 windows) and a completely unseen, non-overlapping blind test set (430 windows).
 
-2. **Diffusion Process:**
-   - **Iterative Refinement:** The conditioned latent vector is fed into a modified UNet architecture. The model iteratively refines this vector by reversing a diffusion process, gradually reducing noise while preserving the text-conditioned features.
-   - **Intermediate States:** At each step, intermediate latent representations are produced that increasingly capture the structure and details dictated by the text prompt.
+2. **Deep Learning Process:**
+   - **Automated Feature Extraction:** The input windows (shaped as Batch, 1, 150) are fed into Conv1D layers. These layers act as automated feature extractors, capturing local, shift-invariant structural information and vibration spikes.
+   - **Temporal Sequence Learning:** The output from the convolutional layers is passed to Bidirectional GRU (BiGRU) layers. These layers learn the bidirectional temporal context and long-range dependencies within the signal sequence.
+   - **Optimization:** The model (specifically the best-performing Model 4) is trained using the Adam optimizer and categorical cross-entropy loss, utilizing 5-fold stratified cross-validation to determine the optimal number of epochs.
 
 3. **Output:**
-   - **Decoding:** The final refined latent representation is passed through a decoder (often part of a Variational Autoencoder setup) to generate the final image.
-   - **Generated Image:** The output is a synthesized image that visually represents the input text prompt, complete with artistic style and detail.
+   - **Fault Classification:** The final processed representation is decoded to classify the equipment state into one of five categories: CVF (Control Valve Fault), GOOD (Healthy), IOVF (Inlet/Outlet Valve Fault), IVF (Inlet Valve Fault), or OVF (Outlet Valve Fault).
 
 ## How to Run the Code
 
