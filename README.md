@@ -1,4 +1,4 @@
-# Smarter-Maintenance-Machine-Learning-for-Reliable-Air-Compressor-Health-Monitoring
+# Smarter Maintenance Machine Learning for Reliable Air Compressor Health Monitoring
 
 ## Project Metadata
 ### Authors
@@ -7,16 +7,17 @@
 - **Affiliations:** KFUPM
 
 ## Introduction
-Air compressors are essential to several industries, including manufacturing and energy, and their operation needs to be reliable. It is critically important to have a way to detect mechanical failures in compressor systems to prevent operational downtime and unsafe working conditions.
+Reciprocating compressors are important assets in process industries such as petrochemical and energy industries where it is important to have continuity in its operations. Malfunctions of such machines may cause unpredicted downtime, expensive maintenance procedures, and accidents. Consequently, coming up with effective and sound fault diagnosis (FD) systems has emerged as a research focus. Vibration analysis is the most informative method of data-driven techniques because it is sensitive to mechanical degradation.
 
-Traditional methods of fault detection, such as routine checks by operators, are being recognized as inadequate due to their subjective nature and inefficiency. Although data-driven approaches for detection based on vibration analysis offer potential improvements, many models are based on historical data for rather simplistic and limited mechanical fault types. Furthermore, their performance is restricted in practice because of the inherent difficulty of distinguishing which curated dynamic signal features are most correlated to compressor condition when the data is highly complex.
+Previous researchers on an air-compressor dataset publicly available have found high, and in some cases perfect classification performance. These experiments however rely on large amounts of manual feature engineering and use simple random splits which can blur the generalization capacity of their model. As an example, Nambiar et al. (2024) obtained 100 percent accuracy through feature fusion and kNN, and Bhattacharyya et al. (2025) obtained 98.66 percent through a Weightless Neural Network. The reproducibility and scalability of such methods is limited by the fact that they are based on handcrafted features.
 
-This means there is a need to develop progressively 'smarter' diagnostic systems. Better informing models and decision making by utilizing different signal feature classifications, also known as feature fusion, will allow a better assessment of compressor state. This advancement is important for transitioning maintenance programs from reactive to predictive maintenance, providing improved reliability and reduced costs.
+In this case, the study employs an end-to-end deep learning model, learning to utilize standardized raw vibration signal directly. Each of the four architectures is evaluated and a rigorous evaluation scheme consisting of an independent blind test set that approximates real-life situations is used. The findings reveal that development-set Cross-Validation (CV) performance and blind-set generalization are highly consistent, which shows that the non-regularized Conv1D-BiGRU architecture generalizes best, and it can achieve high accuracy without the intricate regularization. The findings provide a corrected and methodologically sound base of automated air-compressor fault diagnosis.
 
-Meta Data: Fault/Operating Mode (GOOD, IVF, OVF, IOVF), sampling range (10,000 samples or 0.0001s based readings), amplitude units m/s2, sensor configuration (Dytran 3055 B1), compressor rating (power supply, service pressure), data acquisition system configurations (NI-4432)
 
 ## Problem Statement
-At present, many existing fault diagnosis techniques for machines are generally inaccurate due to relying on limited types of characteristics and are generally not applicable for use across different machinery types, or in some instances to a narrow extent of offerings. This research project minimizes these limitations by providing a feature fusion prediction technique, where statistical features, histogram features, and ARMA features for air compressor fault prediction, shift some of the predictive accuracy base. However, the present shift in design and methodology still hinges on the questions of whether it will be generalizable across multi-stage compressors in practice, and whether predictive generalizability can be claimed or proven.
+The primary issue that was overcome in the current research is the use of manual feature engineering and simplified evaluation models. Earlier literature which reports near-perfect accuracy derives large collections of handcrafted features; statistical parameters, histogram descriptors, ARMA coefficients; and expert tuning in order to generate strong performance. Although strong on this particular data, such pipelines are hard to scale and can fail to transfer to other operating conditions and equipment.
+Moreover, the foregoing means that, past studies heavily rely on random train-test splits and accuracy-only reporting, which hides the actual generalization potential of the model. Many models are able to memorize temporal patterns rather than be able to learn transferable diagnostic features, even without chronological separation or blind assessment. Thus, a new standard is required; the new standard that excludes manual feature engineering and measures the performance based on strict and leakage-free blind testing. The paper bridges this methodological shortcoming by constructing automated deep sequence-learning architectures and only testing them on a completely unseen blind set.
+
 
 ## Application Area and Project Domain
 This study falls under the interdisciplinary field of Intelligent Maintenance Systems, which combines machine learning, signal processing, and mechanical engineering.  With an emphasis on improving fault diagnosis for crucial rotating machinery, its specific application area is Industrial Predictive Maintenance.  To create a dependable framework for early fault detection that can reduce downtime and maximize maintenance operations in industrial settings, the study uses the specific use case of vibration-based condition monitoring for reciprocating air compressors to illustrate its methodology.
@@ -31,25 +32,31 @@ This paper aims to improve fault diagnosis in reciprocating air compressors by p
 - **Report:** [Project Report](/report.pdf)
 
 ### Reference Paper
-- [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/abs/2112.10752)
+-  Prediction of air compressor faults with feature fusion and machinelearning
+- Link: https://doi.org/10.1016/j.knosys.2024.112519
 
 ### Reference Dataset
-- [LAION-5B Dataset](https://laion.ai/blog/laion-5b/)
+- https://github.com/Sangharatna786/Air-compressor-Vibration-Signals.git
 
 
 ## Project Technicalities
 
 ### Terminologies
-- **Diffusion Model:** A generative model that progressively transforms random noise into coherent data.
-- **Latent Space:** A compressed, abstract representation of data where complex features are captured.
-- **UNet Architecture:** A neural network with an encoder-decoder structure featuring skip connections for better feature preservation.
-- **Text Encoder:** A model that converts text into numerical embeddings for downstream tasks.
-- **Perceptual Loss:** A loss function that measures high-level differences between images, emphasizing perceptual similarity.
-- **Tokenization:** The process of breaking down text into smaller units (tokens) for processing.
-- **Noise Vector:** A randomly generated vector used to initialize the diffusion process in generative models.
-- **Decoder:** A network component that transforms latent representations back into image space.
-- **Iterative Refinement:** The process of gradually improving the quality of generated data through multiple steps.
-- **Conditional Generation:** The process where outputs are generated based on auxiliary inputs, such as textual descriptions.
+- **End-to-End Deep Learning:** A machine learning paradigm employed to learn discriminative representations directly from raw vibration signals, eliminating the need for manual feature engineering.
+- **Blind Test Set:** An independent evaluation dataset that is completely separated in time from the development set to ensure leakage-free assessment of generalization.
+- **Conv1D (1D Convolution):** A neural network layer utilized to capture local, shift-invariant structural information and spatial features from the standardized raw input windows.
+- **BiGRU (Bidirectional Gated Recurrent Unit):** A recurrent neural network component designed to learn long-range bidirectional temporal dependencies within the vibration sequences.
+- **Hybrid Architecture:** A combined network design that integrates convolutional layers for feature extraction with GRU layers for temporal learning.
+- **Windowing:** The data segmentation process where continuous signals are divided into fixed lengths samples with a stride to create discrete inputs for the network.
+- **Stratified Cross-Validation:** A 5-fold validation technique applied to the development set to determine model stability and the optimal number of training epochs without using the blind test data.
+- **StandardScaler:** A preprocessing normalization method that scales raw acceleration values to a mean of zero and standard deviation of one, fitted exclusively on the development set.
+- **Categorical Cross-Entropy:** The specific loss function minimized during the training phase to optimize the multi-class classification of the five fault conditions.
+- **Adam Optimizer:** The optimization algorithm used to update the model weights efficiently during training.
+- **OVF:** The specific loss function minimized during the training phase to optimize the multi-class classification of the five fault conditions.
+- **Categorical Cross-Entropy:** The specific loss function minimized during the training phase to optimize the multi-class classification of the five fault conditions.
+- **Categorical Cross-Entropy:** The specific loss function minimized during the training phase to optimize the multi-class classification of the five fault conditions.
+- **Categorical Cross-Entropy:** The specific loss function minimized during the training phase to optimize the multi-class classification of the five fault conditions.
+- **Categorical Cross-Entropy:** The specific loss function minimized during the training phase to optimize the multi-class classification of the five fault conditions.
 
 ### Problem Statements
 - **Problem 1:** Achieving high-resolution and detailed images using conventional diffusion models remains challenging.
