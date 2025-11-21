@@ -67,23 +67,11 @@ This paper aims to improve fault diagnosis in reciprocating air compressors by p
 - **Evaluation Methodology:** Usage of random splits ignores time dependence, causing data leakage and inflating accuracy.
 - **Generalization Assessment:** Absence of unseen blind-set testing fails to distinguish between true learning and dataset memorization.
 
-### Problem vs. Ideation: Proposed 3 Ideas to Solve the Problems
-1. **Optimized Architecture:** Redesign the model architecture to improve efficiency and balance image quality with faster inference.
-2. **Advanced Loss Functions:** Integrate novel loss functions (e.g., perceptual loss) to better capture artistic nuances and structural details.
-3. **Enhanced Data Augmentation:** Implement sophisticated data augmentation strategies to improve the model’s robustness and reduce overfitting.
+### Proposed Solution
+The solution includes:
 
-### Proposed Solution: Code-Based Implementation
-This repository provides an implementation of the enhanced stable diffusion model using PyTorch. The solution includes:
-
-- **Modified UNet Architecture:** Incorporates residual connections and efficient convolutional blocks.
-- **Novel Loss Functions:** Combines Mean Squared Error (MSE) with perceptual loss to enhance feature learning.
-- **Optimized Training Loop:** Reduces computational overhead while maintaining performance.
-
-### Key Components
-- **`model.py`**: Contains the modified UNet architecture and other model components.
-- **`train.py`**: Script to handle the training process with configurable parameters.
-- **`utils.py`**: Utility functions for data processing, augmentation, and metric evaluations.
-- **`inference.py`**: Script for generating images using the trained model.
+- **Automated Learning:** Replaces manual feature engineering with deep sequence-learning models to learn discriminative representations directly from raw signals.
+- **Pipeline Architecture:** Utilizes convolutional layers for automated local feature extraction combined with a BiGRU layer to capture hierarchical temporal relationships.
 
 ## Model Workflow
 The workflow of the Enhanced Stable Diffusion model is designed to translate textual descriptions into high-quality artistic images through a multi-step diffusion process:
