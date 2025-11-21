@@ -52,11 +52,10 @@ This paper aims to improve fault diagnosis in reciprocating air compressors by p
 - **StandardScaler:** A preprocessing normalization method that scales raw acceleration values to a mean of zero and standard deviation of one, fitted exclusively on the development set.
 - **Categorical Cross-Entropy:** The specific loss function minimized during the training phase to optimize the multi-class classification of the five fault conditions.
 - **Adam Optimizer:** The optimization algorithm used to update the model weights efficiently during training.
-- **OVF:** The specific loss function minimized during the training phase to optimize the multi-class classification of the five fault conditions.
-- **Categorical Cross-Entropy:** The specific loss function minimized during the training phase to optimize the multi-class classification of the five fault conditions.
-- **Categorical Cross-Entropy:** The specific loss function minimized during the training phase to optimize the multi-class classification of the five fault conditions.
-- **Categorical Cross-Entropy:** The specific loss function minimized during the training phase to optimize the multi-class classification of the five fault conditions.
-- **Categorical Cross-Entropy:** The specific loss function minimized during the training phase to optimize the multi-class classification of the five fault conditions.
+- **OVF:** Outlet valve fluttering.
+- **IOVF:** Inlet-outlet valve fluttering.
+- **IVF:** Inlet valve fluttering.
+- **CVF:** Check valve fault.
 
 ### Problem Statements
 - **Problem 1:** Achieving high-resolution and detailed images using conventional diffusion models remains challenging.
