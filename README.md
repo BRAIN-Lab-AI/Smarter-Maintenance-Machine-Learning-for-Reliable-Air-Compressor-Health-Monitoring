@@ -25,8 +25,6 @@ This study falls under the interdisciplinary field of Intelligent Maintenance Sy
 ## What is the paper trying to do, and what are you planning to do?
 This paper aims to improve fault diagnosis in reciprocating air compressors by proposing an original feature fusion method that uses statistical, histogram, and ARMA features with vibration signals in heavy lazy classifiers to achieve even greater accuracy. Future developments of this research could include testing the model's generalizability with other similar machinery, utilizing advanced fusion techniques such as deep learning-based methods.
 
-# THE FOLLOWING IS SUPPOSED TO BE DONE LATER
-
 ### Project Documents
 - **Presentation:** [Project Presentation](/presentation.pptx)
 - **Report:** [Project Report](/report.pdf)
