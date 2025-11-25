@@ -28,7 +28,6 @@ This paper aims to improve fault diagnosis in reciprocating air compressors by p
 ### Project Documents
 - **Presentation:** [Project Presentation](/presentation.pptx)
 - **Report (PDF):** [Project Report](/report.pdf)
-- **Report (Word):** [Project Report Editable Version](/report - Editable Version.docx)
 - **Code:** [Project Code](/Code.ipynb)
 
 ### Reference Paper
